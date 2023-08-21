@@ -13,3 +13,14 @@ export const fetchData = async <T>(path:string):Promise<T> =>{
     }
 }
 
+
+export const postData =async<T>(path:string,params:T):Promise<T> => {
+    try {
+        const resp = await axios.post(path,params)
+        console.log(resp.data)
+        return resp.data
+    } catch (error) {
+        throw console.log(error)
+    }
+    
+}
